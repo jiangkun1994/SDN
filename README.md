@@ -28,10 +28,9 @@ In telecommunications, the round-trip delay time (RTD) or round-trip time (RTT) 
 - `mininet> iperf`: testing TCP bandwidth between hosts.  
 - `mininet> dump`: export the information of each node.  
 ## Useful Links  
-- [WiFi, LTE, or Both? Measuring Multi-Homed Wireless Internet Performance](MIT_paper)  
-- [An Enhancement of Multipath TCP Performance in Lossy Wireless Networks](mtcp_lossy_1)  
-- [Multipath TCP in Lossy Wireless Environment](mtcp_lossy_2)  
+- [WiFi, LTE, or Both? Measuring Multi-Homed Wireless Internet Performance](http://web.mit.edu/ravinet/www/imc_submission.pdf)  
+- [An Enhancement of Multipath TCP Performance in Lossy Wireless Networks](https://ieeexplore.ieee.org/document/7856155/)  
+- [Multipath TCP in Lossy Wireless Environment](https://pdfs.semanticscholar.org/a9ed/bb069dfabd8d5113e6d8cedc6ec94d86a9b7.pdf)  
 - [Analysis of UDP-based Reliable Transport using Network Emulation](http://www.diva-portal.org/smash/get/diva2:1023775/FULLTEXT02.pdf)  
-- [exercises-high-performance](exercises-high-performance)  
 - [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#what)  
 - [Mininet network simulator review](http://www.brianlinkletter.com/mininet-test-drive/)
