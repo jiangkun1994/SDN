@@ -1,6 +1,5 @@
 ## TCP, QUIC, MPTCP and MP-QUIC  
-### Arguments
-- File sizes: 10KB, 100KB, 500KB, 1MB, 10MB, 50MB, 100MB.  
+### Parameters- File sizes: 10KB, 100KB, 500KB, 1MB, 10MB, 50MB, 100MB.  
 - Link characteristics: bandwidth, delay, jitter, pakcet loss.  
 ### Tasks  
 1. TCP vs QUIC  
