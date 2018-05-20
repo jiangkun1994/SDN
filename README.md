@@ -20,7 +20,12 @@ In telecommunications, the round-trip delay time (RTD) or round-trip time (RTT) 
 - **TCP vs QUIC**:  
    - Connection handshake: TCP required a 3-way handshake to establish a connection, and, on top of that, you also need to negotiate the TLS connection. QUIC is built on top of UDP so it requires 1 packet to establish the connection, including TLS. Actually, if the client and the server have spoken in the past, then we are talking about a zero-handshake connection ¨C that happens 75% the time.  
    - Multiplexing: the communication between the client and the server is multiplexed and this overcomes the head-of-line blocking issues that are common with TCP connections.  
-- **ICMP**: The Internet Control Message Protocol (ICMP) is a supporting protocol in the Internet protocol suite. It is used by network devices, including routers, to send error messages and operational information indicating, for example, that a requested service is not available or that a host or router could not be reached.
+- **ICMP**: The Internet Control Message Protocol (ICMP) is a supporting protocol in the Internet protocol suite. It is used by network devices, including routers, to send error messages and operational information indicating, for example, that a requested service is not available or that a host or router could not be reached.  
+- When eth1 has no IP address, add the code into `/etc/network/interfaces`
+```yml
+auto eth1  
+iface eth1 inet dhcp
+```
 ## Mininet Command  
 - `sudo mn`: start a minimal topology and enter the CLI for mininet.  
 - `mininet> nodes`: show the available nodes.  
