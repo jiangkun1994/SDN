@@ -37,16 +37,16 @@ iface eth1 inet dhcp
 
 |  Link (WiFi) 	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
-|   Good Link  	|     10     	|        50        	|        1        	|
-| General Link 	|     20     	|        30        	|        5        	|
+|   Good Link  	|     10     	|        50        	|        0.01        	|
+| General Link 	|     20     	|        30        	|        1        	|
 |   Bad Link   	|     30     	|        10        	|        10       	| 
 
 - **LTE**:  
 
 |  Link (LTE)  	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
-|   Good Link  	|     75     	|        50        	|        1        	|
-| General Link 	|     90     	|        30        	|        5        	|
+|   Good Link  	|     75     	|        50        	|        0.01        	|
+| General Link 	|     90     	|        30        	|        1        	|
 |   Bad Link   	|     110    	|        10        	|        10       	|
 
 ## Mininet Command  
