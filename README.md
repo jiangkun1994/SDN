@@ -32,6 +32,15 @@ iface eth1 inet dhcp
 - `mininet> net`: show the link information.  
 - `mininet> iperf`: testing TCP bandwidth between hosts.  
 - `mininet> dump`: export the information of each node.  
+## Run TCP-WiFi.py  
+```yml  
+cd ~/mininet  
+truncate -s 1M (10M, 50M, etc) ~/mininet/1mbfile  
+sudo python TCP-WiFi.py  
+mininet> h1 cd ~/mininet  
+mininet> h1 python -m SimpleHTTPServer 80 &  
+mininet> h2 wget http://10.0.0.1:80/1mbfile
+```
 ## Useful Links  
 - [WiFi, LTE, or Both? Measuring Multi-Homed Wireless Internet Performance](http://web.mit.edu/ravinet/www/imc_submission.pdf)  
 - [An Enhancement of Multipath TCP Performance in Lossy Wireless Networks](https://ieeexplore.ieee.org/document/7856155/)  
