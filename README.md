@@ -31,9 +31,9 @@ iface eth1 inet dhcp
 - **Loss**: How frequently are packets dropped, in percent.  
 - **Queue size**: How many packets the send queue can hold. When full, the last is dropped.  
 ## Link Characteristics  
-![](figures/link-parameters)  
+![](figures/link-parameters.jpg)  
 
-![](figures/packet-loss)
+![](figures/packet-loss.jpg)
 ## Mininet Command  
 - `sudo mn`: start a minimal topology and enter the CLI for mininet.  
 - `mininet> nodes`: show the available nodes.  
