@@ -25,13 +25,28 @@ In telecommunications, the round-trip delay time (RTD) or round-trip time (RTT) 
 ```yml
 auto eth1  
 iface eth1 inet dhcp
-```
+```  
+- **Delay**: One-way delay for all packets. The round-trip time is 2\*delay (depends on the network configuration).  
+- **Jitter**: How much should delay change between different packets.  
+- **Loss**: How frequently are packets dropped, in percent.  
+- **Queue size**: How many packets the send queue can hold. When full, the last is dropped.  
+## Link Characteristics  
+![](figures/link-parameters)  
+
+![](figures/packet-loss)
 ## Mininet Command  
 - `sudo mn`: start a minimal topology and enter the CLI for mininet.  
 - `mininet> nodes`: show the available nodes.  
 - `mininet> net`: show the link information.  
 - `mininet> iperf`: testing TCP bandwidth between hosts.  
 - `mininet> dump`: export the information of each node.  
+- `tcpdump`: To record packets headers and/or data to packet capture files (PCAP-files), including time stamp when each packet was received.  
+- `ping/Hping3`: Utilities to send Internet Control Message Protocol (ICMP) echo packets and display round-trip-time, latency and packet loss.  
+- `iperf`: Bandwidth measurement utility that can also function as a traffic generator.  
+- `nginx`: Web server that supports HTTP and HTTPS.  
+- `curl`: Command-line web client.  
+- `wireshark`: Utility to graphically and interactively analyze network packets.  
+- `tshark`:  Command-line version of Wireshark to analyze and extract packet fields and statistics.
 ## Run TCP-WiFi.py  
 ```yml  
 cd ~/mininet  
