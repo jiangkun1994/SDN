@@ -34,6 +34,7 @@ iface eth1 inet dhcp
 ![](figures/link-parameters.jpg)  ![](figures/packet-loss.jpg)  
 
 - **WiFi**:  
+
 |  Link (WiFi) 	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
 |   Good Link  	|     10     	|        50        	|        1        	|
@@ -41,6 +42,7 @@ iface eth1 inet dhcp
 |   Bad Link   	|     30     	|        10        	|        10       	| 
 
 - **LTE**:  
+
 |  Link (LTE)  	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
 |   Good Link  	|     75     	|        50        	|        1        	|
