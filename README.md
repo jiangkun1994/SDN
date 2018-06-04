@@ -2,6 +2,7 @@
 ### Parameters  
 - File sizes: 10KB, 100KB, 500KB, 1MB, 10MB, 50MB, 100MB.  
 - Link characteristics: bandwidth, delay, jitter, packet loss.  
+
 ### Tasks  
 1. TCP vs QUIC  
    - Over a single link.  
@@ -20,8 +21,12 @@ In telecommunications, the round-trip delay time (RTD) or round-trip time (RTT) 
 - **TCP vs QUIC**:  
    - Connection handshake: TCP required a 3-way handshake to establish a connection, and, on top of that, you also need to negotiate the TLS connection. QUIC is built on top of UDP so it requires 1 packet to establish the connection, including TLS. Actually, if the client and the server have spoken in the past, then we are talking about a zero-handshake connection ¨C that happens 75% the time.  
    - Multiplexing: the communication between the client and the server is multiplexed and this overcomes the head-of-line blocking issues that are common with TCP connections.  
-- **ICMP**: The Internet Control Message Protocol (ICMP) is a supporting protocol in the Internet protocol suite. It is used by network devices, including routers, to send error messages and operational information indicating, for example, that a requested service is not available or that a host or router could not be reached.  
-- When eth1 has no IP address, add the code into `/etc/network/interfaces`
+![](figures/tcp-quic.png)  
+
+- **ICMP**: The Internet Control Message Protocol (ICMP) is a supporting protocol in the Internet protocol suite. It is used by network devices, including routers, to send error messages and operational information indicating, for example, that a requested service is not available or that a host or router could not be reached.    
+- **packet loss**: Packet loss occurs when one or more packets of data travelling across a computer network fail to reach their destination. Packet loss is either caused by errors in data transmission, typically across wireless networks or network congestion. The Transmission Control Protocol (TCP) detects packet loss and performs retransmissions to ensure reliable messaging. Packet loss in a TCP connection is also used to avoid congestion and thus produces an intentionally reduced throughput for the connection.  
+- **Multipath TCP (MPTCP)**: Aiming at allowing a Transmission Control Protocol (TCP) connection to use multiple paths to maximize resource usage and increase redundancy. The redundancy offered by Multipath TCP enables inverse multiplexing of resources, and thus increases TCP throughput to the sum of all available link-level channels instead of using a single one as required by plain TCP. Multipath TCP is backward compatible with plain TCP.  
+- When eth1 has no IP address, add the code into `/etc/network/interfaces`  
 ```yml
 auto eth1  
 iface eth1 inet dhcp
@@ -39,15 +44,15 @@ iface eth1 inet dhcp
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
 | Normal Link  	|     10     	|        20        	|        0.01       |
 | Slightly Congested Link 	|     100     	|        20        	|        1        	|
-| Heavily Congested Link   	|     500     	|        10        	|        10       	| 
+| Heavily Congested Link   	|     500     	|        20        	|        10       	| 
 
 - **LTE**:  
 
 |  Link (LTE)  	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
-|   Good Link  	|     70     	|        20        	|        0.01       |
-| General Link 	|     200     	|        20        	|        1        	|
-|   Bad Link   	|     800    	|        10        	|        10       	|
+|   Normal Link  	|     70     	|        20        	|        0.01       |
+| Slightly Congested Link 	|     200     	|        20        	|        1        	|
+|   Heavily Congested Link   	|     800    	|        20        	|        10       	|
 
 ## Mininet Command  
 - `sudo mn`: start a minimal topology and enter the CLI for mininet.  
@@ -61,7 +66,8 @@ iface eth1 inet dhcp
 - `nginx`: Web server that supports HTTP and HTTPS.  
 - `curl`: Command-line web client.  
 - `wireshark`: Utility to graphically and interactively analyze network packets.  
-- `tshark`:  Command-line version of Wireshark to analyze and extract packet fields and statistics.
+- `tshark`:  Command-line version of Wireshark to analyze and extract packet fields and statistics.  
+
 ## Run TCP-WiFi.py  
 ```yml  
 cd ~/mininet  
@@ -70,7 +76,9 @@ sudo python TCP-WiFi.py
 mininet> h1 cd ~/mininet  
 mininet> h1 python -m SimpleHTTPServer 80 &  
 mininet> h2 wget http://10.0.0.1:80/1mbfile
-```
+```  
+## Conclusion  
+
 ## Useful Links  
 - [WiFi, LTE, or Both? Measuring Multi-Homed Wireless Internet Performance](http://web.mit.edu/ravinet/www/imc_submission.pdf)  
 - [An Enhancement of Multipath TCP Performance in Lossy Wireless Networks](https://ieeexplore.ieee.org/document/7856155/)  
