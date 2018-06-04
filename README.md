@@ -37,17 +37,17 @@ iface eth1 inet dhcp
 
 |  Link (WiFi) 	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
-|   Good Link  	|     10     	|        50        	|        0.01        	|
-| General Link 	|     20     	|        30        	|        1        	|
-|   Bad Link   	|     30     	|        10        	|        10       	| 
+| Normal Link  	|     10     	|        20        	|        0.01       |
+| Slightly Congested Link 	|     100     	|        20        	|        1        	|
+| Heavily Congested Link   	|     500     	|        10        	|        10       	| 
 
 - **LTE**:  
 
 |  Link (LTE)  	| Delay (ms) 	| Bandwidth (Mbps) 	| Packet Loss (%) 	|
 |:------------:	|:----------:	|:----------------:	|:---------------:	|
-|   Good Link  	|     75     	|        50        	|        0.01        	|
-| General Link 	|     90     	|        30        	|        1        	|
-|   Bad Link   	|     110    	|        10        	|        10       	|
+|   Good Link  	|     70     	|        20        	|        0.01       |
+| General Link 	|     200     	|        20        	|        1        	|
+|   Bad Link   	|     800    	|        10        	|        10       	|
 
 ## Mininet Command  
 - `sudo mn`: start a minimal topology and enter the CLI for mininet.  
